@@ -18,6 +18,14 @@ pipeline {
             }
         }
 
+        stage('Build Docker') {
+            steps {
+                sh "docker exec -it jenkins-docker bash"
+                sh "apt update && apt install -y docker.io"
+                sh "exit"
+            }
+        }
+        
         stage('Build Docker Image') {
             steps {
                 sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG ."
