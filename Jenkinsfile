@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven 3.9.6' 
-    }
-
     environment {
         DOCKER_IMAGE = 'omerbenshimol/simple-java-calculator'
         DOCKER_TAG = 'latest'
@@ -12,11 +8,15 @@ pipeline {
     }
 
     stages {
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/OmerBenShimol1/simple-java-calculator.git'
+            }
+        }
+
         stage('Build and Test') {
             steps {
-                withMaven(maven: 'Maven 3.9.6') {
-                    sh 'mvn clean test'
-                }
+                sh 'mvn clean test'
             }
         }
 
@@ -28,11 +28,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(
-                    credentialsId: "${DOCKER_CREDENTIALS_ID}",
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
-                )]) {
+                withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                         docker push $DOCKER_IMAGE:$DOCKER_TAG
