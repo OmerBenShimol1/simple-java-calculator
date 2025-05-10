@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/OmerBenShimol1/simple-java-calculator.git'
+                git branch: 'main', url: 'https://github.com/OmerBenShimol1/simple-java-calculator.git'
             }
         }
 
