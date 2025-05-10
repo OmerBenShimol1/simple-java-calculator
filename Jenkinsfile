@@ -2,8 +2,6 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'omerbenshimol/simple-java-calculator'
-        DOCKER_TAG = 'latest'
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
     }
 
