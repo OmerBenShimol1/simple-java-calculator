@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  calculator:
+    image: omerbs/calculator-app:latest
+    container_name: calculator-app
+    stdin_open: true
+    tty: true   
