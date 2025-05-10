@@ -1,8 +1,9 @@
-agent {
-    docker {
-        image 'maven:3.9.6-eclipse-temurin-17'
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven 3.9.6' 
     }
-}
 
     environment {
         DOCKER_IMAGE = 'omerbenshimol/simple-java-calculator'
@@ -13,7 +14,9 @@ agent {
     stages {
         stage('Build and Test') {
             steps {
-                sh 'mvn clean test'
+                withMaven(maven: 'Maven 3.9.6') {
+                    sh 'mvn clean test'
+                }
             }
         }
 
