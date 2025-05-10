@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3.9.6-eclipse-temurin-17'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
 
     environment {
         DOCKER_IMAGE = 'omerbenshimol/simple-java-calculator'
@@ -8,12 +13,6 @@ pipeline {
     }
 
     stages {
-        stage('Clone repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/OmerBenShimol1/simple-java-calculator.git'
-            }
-        }
-
         stage('Build and Test') {
             steps {
                 sh 'mvn clean test'
