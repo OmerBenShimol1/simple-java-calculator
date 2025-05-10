@@ -17,14 +17,6 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
-
-        stage('Build Docker') {
-            steps {
-                sh "docker exec -it jenkins-docker bash"
-                sh "apt update && apt install -y docker.io"
-                sh "exit"
-            }
-        }
         
         stage('Build Docker Image') {
             steps {
