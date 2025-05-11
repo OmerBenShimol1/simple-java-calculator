@@ -42,6 +42,9 @@ pipeline {
     }
 
     post {
+        always {
+            archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
+        }        
         success {
             echo '✅ Build and push succeeded!'
         }
