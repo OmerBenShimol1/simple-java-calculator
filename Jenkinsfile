@@ -3,6 +3,9 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
+        DOCKER_IMAGE = 'omerbs/calculator-app'
+        DOCKER_TAG = 'latest'
+        DOCKERFILE_PATH = 'Dockerfile.app'
     }
 
     stages {
@@ -18,10 +21,10 @@ pipeline {
                 junit 'target/surefire-reports/*.xml'
             }
         }
-        
+
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG ."
+                sh "docker build -t $DOCKER_IMAGE:$DOCKER_TAG -f $DOCKERFILE_PATH ."
             }
         }
 
@@ -35,6 +38,15 @@ pipeline {
                     '''
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build and push succeeded!'
+        }
+        failure {
+            echo '❌ Something went wrong.'
         }
     }
 }
