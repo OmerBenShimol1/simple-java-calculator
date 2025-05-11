@@ -42,4 +42,12 @@ Archives test results and logs
 Failed the tests by purpose to make sure that the pipeline does not create a new dockerfile.
 ![TestsFailed](https://github.com/user-attachments/assets/9523ec40-0806-430f-a4c1-8ae5edd09872)
 
+Kubernetes run:
+*runs manually because the program is waiting for input from the user.
+Kubernetes cannot get input from the user this way.
+![kubectl run with stdin](https://github.com/user-attachments/assets/f9302d02-faff-4f87-bbe6-91b08496129f)
+
+
+
+
 At the beginning I created a Dockerfile that contains Jenkins with Maven and Docker. 
