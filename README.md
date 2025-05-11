@@ -28,6 +28,7 @@ Builds a Docker image - only if all the unit tests passed
 Pushes the image to Docker Hub
 Archives test results and logs
 
+Pipeline run results:
 ![image](https://github.com/user-attachments/assets/e3cd4b0e-ff69-4bcc-88e9-511f830c03f0)
 ![image](https://github.com/user-attachments/assets/1851bced-e857-4da9-ae5f-442f54209265)
 ![image](https://github.com/user-attachments/assets/216cec48-a131-4fdf-a885-a976d369f93b)
