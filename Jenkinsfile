@@ -45,11 +45,5 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
         }        
-        success {
-            echo '✅ Build and push succeeded!'
-        }
-        failure {
-            echo '❌ Something went wrong.'
-        }
     }
 }
