@@ -19,5 +19,9 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["java", "-cp", "src:lib/*", "CalculatorApp"]
+          args:
+            - "{{ .Values.a }}"
+            - "{{ .Values.b }}"
+            - "{{ .Values.op }}"
           ports:
             - containerPort: {{ .Values.containerPort }}

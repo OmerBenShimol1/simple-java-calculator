@@ -3,8 +3,6 @@ version: '3.8'
 services:
   calculator:
     image: omerbs/calculator-app:latest
-    container_name: calculator-gui
-    ports:
-      - "6080:80"     # גישה דרך דפדפן
-      - "5900:5900"   # אופציונלי: חיבור עם VNC client
-    restart: unless-stopped
+    container_name: calculator-app
+    stdin_open: true
+    tty: true   
