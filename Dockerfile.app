@@ -18,4 +18,4 @@ COPY . /app
 RUN javac Calculator.java CalculatorApp.java
 
 # Run the GUI App when the container starts
-CMD ["java", "CalculatorGUI"]
+CMD ["java", "CalculatorApp"]
