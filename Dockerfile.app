@@ -1,5 +1,8 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc
 
+# Remove broken Chrome repo
+RUN rm /etc/apt/sources.list.d/google-chrome.list || true
+
 # Install Java
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk && \
@@ -12,7 +15,7 @@ WORKDIR /app
 COPY . /app
 
 # Compile the Java GUI App
-RUN javac Calculator.java CalculatorApp.java
+RUN javac Calculator.java CalculatorApp.java CalculatorGUI.java
 
 # Run the GUI App when the container starts
-CMD ["java", "CalculatorApp"]
+CMD ["java", "CalculatorGUI"]
