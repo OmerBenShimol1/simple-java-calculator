@@ -44,7 +44,8 @@ Failed the tests by purpose to make sure that the pipeline does not create a new
 ![TestsFailed](https://github.com/user-attachments/assets/9523ec40-0806-430f-a4c1-8ae5edd09872)
 
 Helm with Kubernetes run:
-![image](https://github.com/user-attachments/assets/9d37d627-0da2-42d5-9cc5-5304c36b97e4)
+![image](https://github.com/user-attachments/assets/d59c01ec-5da7-4e7c-9142-6d6c33ad3abf)
+
 
 
 
