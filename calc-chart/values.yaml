@@ -5,10 +5,6 @@ image:
   pullPolicy: IfNotPresent
   tag: "latest"
 
-a: "5"
-b: "3"
-op: "*"
-
 service:
   type: ClusterIP
   port: 8080

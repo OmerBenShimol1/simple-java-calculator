@@ -1,23 +1,23 @@
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: {{ include "calc-chart.fullname" . }}
   labels:
     app: {{ include "calc-chart.name" . }}
 spec:
-  backoffLimit: 0
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "calc-chart.name" . }}
   template:
     metadata:
       labels:
         app: {{ include "calc-chart.name" . }}
     spec:
-      restartPolicy: Never
       containers:
         - name: calculator-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["java", "-cp", "src:lib/*", "CalculatorApp"]
-          args:
-            - "{{ .Values.a }}"
-            - "{{ .Values.b }}"
-            - "{{ .Values.op }}"
+          ports:
+            - containerPort: {{ .Values.containerPort }}
