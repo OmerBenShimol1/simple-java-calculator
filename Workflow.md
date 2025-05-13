@@ -40,7 +40,8 @@ wrote docker-compose.yml file that:
  
 Pulls the published image from Docker Hub.
 stdin_open and tty if the user wants to interact manually with the container.
-
+To run the docker-compose.yaml:
+```docker-compose run --rm calculator```
 
 
 ## 7. Kubernetes + Helm
