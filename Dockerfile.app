@@ -11,11 +11,12 @@ RUN apt-get update && \
 # Set working directory
 WORKDIR /app
 
-# Copy app source code
-COPY . /app
+# Copy source code and libraries
+COPY ./src /app/src
+COPY ./lib /app/lib
 
-# Compile the Java GUI App
-RUN javac Calculator.java CalculatorApp.java
+# Compile Java GUI app
+RUN javac -cp "lib/*" src/Calculator.java src/CalculatorApp.java
 
-# Run the GUI App when the container starts
-CMD ["java", "CalculatorApp"]
+# Run GUI app inside the VNC-enabled container
+CMD ["java", "-cp", "src:lib/*", "CalculatorApp"]
