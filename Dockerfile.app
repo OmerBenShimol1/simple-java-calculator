@@ -15,7 +15,7 @@ WORKDIR /app
 COPY . /app
 
 # Compile the Java GUI App
-RUN javac Calculator.java CalculatorApp.java CalculatorGUI.java
+RUN javac Calculator.java CalculatorApp.java
 
 # Run the GUI App when the container starts
 CMD ["java", "CalculatorGUI"]
