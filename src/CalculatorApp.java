@@ -10,15 +10,28 @@ public class CalculatorApp {
                 double b = Double.parseDouble(args[1]);
                 char operation = args[2].charAt(0);
 
-                double result = switch (operation) {
-                    case '+' -> calc.add(a, b);
-                    case '-' -> calc.subtract(a, b);
-                    case '*' -> calc.multiply(a, b);
-                    case '/' -> calc.divide(a, b);
-                    default -> throw new IllegalArgumentException("Unknown operation: " + operation);
-                };
+                double result = 0;
+
+                switch (operation) {
+                    case '+':
+                        result = calc.add(a, b);
+                        break;
+                    case '-':
+                        result = calc.subtract(a, b);
+                        break;
+                    case '*':
+                        result = calc.multiply(a, b);
+                        break;
+                    case '/':
+                        result = calc.divide(a, b);
+                        break;
+                    default:
+                        System.out.println("Unknown operation.");
+                        return;
+                }
 
                 System.out.println("Result: " + result);
+
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format: " + e.getMessage());
             } catch (ArithmeticException e) {
@@ -39,17 +52,26 @@ public class CalculatorApp {
             System.out.println("Enter operation (+, -, *, /):");
             char op = scanner.next().charAt(0);
 
+            double result = 0;
+
             try {
-                double result = switch (op) {
-                    case '+' -> calc.add(a, b);
-                    case '-' -> calc.subtract(a, b);
-                    case '*' -> calc.multiply(a, b);
-                    case '/' -> calc.divide(a, b);
-                    default -> {
+                switch (op) {
+                    case '+':
+                        result = calc.add(a, b);
+                        break;
+                    case '-':
+                        result = calc.subtract(a, b);
+                        break;
+                    case '*':
+                        result = calc.multiply(a, b);
+                        break;
+                    case '/':
+                        result = calc.divide(a, b);
+                        break;
+                    default:
                         System.out.println("Illegal operation.");
-                        yield Double.NaN;
-                    }
-                };
+                        return;
+                }
 
                 System.out.println("Result: " + result);
             } catch (ArithmeticException e) {
