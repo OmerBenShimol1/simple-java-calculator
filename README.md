@@ -84,14 +84,6 @@ Project Tree:
 |       Calculator.java
 |       CalculatorApp.java
 |
-+---target
-|   +---classes
-|   |       Calculator.class
-|   |       CalculatorApp.class
-|   |
-|   \---test-classes
-|           CalculatorTest.class
-|
 \---test
         CalculatorTest.java
 ```
