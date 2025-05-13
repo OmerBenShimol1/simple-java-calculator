@@ -49,6 +49,48 @@ Kubernetes cannot get input from the user this way.
 ![kubectl run with stdin](https://github.com/user-attachments/assets/f9302d02-faff-4f87-bbe6-91b08496129f)
 
 
+Project Tree:
 
 
-At the beginning I created a Dockerfile that contains Jenkins with Maven and Docker. 
+```
+|   docker-compose.yaml
+|   Dockerfile
+|   Dockerfile.app
+|   Jenkinsfile
+|   pom.xml
+|   README.md
+|
++---calc-chart
+|   |   .helmignore
+|   |   Chart.yaml
+|   |   values.yaml
+|   |
+|   +---charts
+|   \---templates
+|       |   job.yaml
+|       |   service.yaml
+|       |   _helpers.tpl
+|       |
+|       \---tests
+|               test-connection.yaml
+|
++---lib
+|       hamcrest-core-1.3.jar
+|       junit-4.13.2.jar
+|       junit-platform-console-standalone-1.13.0-M3.jar
+|
++---src
+|       Calculator.java
+|       CalculatorApp.java
+|
++---target
+|   +---classes
+|   |       Calculator.class
+|   |       CalculatorApp.class
+|   |
+|   \---test-classes
+|           CalculatorTest.class
+|
+\---test
+        CalculatorTest.java
+```
