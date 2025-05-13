@@ -1,10 +1,18 @@
-FROM openjdk:17
+FROM dorowu/ubuntu-desktop-lxde-vnc
 
+# Install Java
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean
+
+# Set working directory
 WORKDIR /app
 
-COPY ./src /app/src
-COPY ./lib /app/lib
+# Copy app source code
+COPY . /app
 
-RUN javac -cp "lib/*" src/Calculator.java src/CalculatorApp.java
+# Compile the Java GUI App
+RUN javac Calculator.java CalculatorApp.java
 
-CMD ["java", "-cp", "src:lib/*", "CalculatorApp"]
+# Run the GUI App when the container starts
+CMD ["java", "CalculatorApp"]
