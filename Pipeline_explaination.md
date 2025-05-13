@@ -5,9 +5,9 @@ Workflow + explainations per stage:
 
 1st stage: Clones the project from the main branch of the GitHub repository.
 
-2nd stage: Cleans old compiled files and runs all unit tests by using the command: mvn clean test
+2nd stage: Cleans old compiled files and runs all unit tests by using the command: `mvn clean test`.
 
-Then collects JUnit test reports by using the command: junit 'target/surefire-reports/*.xml'
+Then collects JUnit test reports by using the command: `junit 'target/surefire-reports/*.xml'`
 
 3rd stage: Builds a new Docker image using a custom Dockerfile (Dockerfile.app) using environment variables.
 
