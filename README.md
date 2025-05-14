@@ -102,7 +102,9 @@ wrote docker-compose.yml file that:
  
 Pulls the published image from Docker Hub.
 The user can change the parameters by editing the command line in the docker-compose.yaml file
+
 ```command: ["java", "-cp", "src:lib/*", "CalculatorApp", "4", "2", "+"]```
+
 Type: ```docker-compose up --build to build the docker-compose```
 
 Also, if the user wants to interact manually with the container they can change stdin_open and tty fields to 'true' and remove the ```command``` field.
