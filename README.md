@@ -106,6 +106,8 @@ The user can change the parameters by editing the command line in the docker-com
 ```command: ["java", "-cp", "src:lib/*", "CalculatorApp", "4", "2", "+"]```
 
 To build the docker-compose type: ```docker-compose up --build``` 
+![image](https://github.com/user-attachments/assets/32b1222d-aa18-41c1-b9c1-abd7147f895c)
+
 
 Also, if the user wants to interact manually with the container they can change stdin_open and tty fields to 'true' and remove the ```command``` field.
 
@@ -130,6 +132,13 @@ values.yaml - set the replicasCount to 1, added the image information and the ar
 #### the user can change the inputs later by running the command:
 
 ```helm upgrade --install calc-app ./calc-chart --set a=10 --set b=20 --set op=-```
+
+![image](https://github.com/user-attachments/assets/eb2f2611-81c5-477d-a3e0-ed36c8425afd)
+
+![image](https://github.com/user-attachments/assets/27ed0d24-273a-4caf-b25f-f331c240c981)
+
+
+
 
 a, b can be changed to any number and op to one of the following: [ +, -, *, / ]
 
