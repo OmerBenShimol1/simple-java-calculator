@@ -39,7 +39,10 @@ Post block: Handle success, failure, always messaging
 wrote docker-compose.yml file that:
  
 Pulls the published image from Docker Hub.
-stdin_open and tty if the user wants to interact manually with the container.
+The user can change the parameters by editing the command line in the docker-compose.yaml file
+```command: ["java", "-cp", "src:lib/*", "CalculatorApp", "4", "2", "+"]```
+
+Also, if the user wants to interact manually with the container they can change stdin_open and tty fields to 'true' and remove the ```command``` field.
 To run the docker-compose.yaml:
 ```docker-compose run --rm calculator```
 
