@@ -44,9 +44,13 @@ The user can change the parameters by editing the command line in the docker-com
 Type: ```docker-compose up --build to build the docker-compose```
 
 Also, if the user wants to interact manually with the container they can change stdin_open and tty fields to 'true' and remove the ```command``` field.
+
 To run the docker-compose.yaml:
+
 ```docker-compose run --rm calculator```
+
 To stop the environment and remove any unused containers:
+
 ```docker-compose down --remove-orphans```
 
 ## 7. Kubernetes + Helm
@@ -62,10 +66,12 @@ values.yaml - set the replicasCount to 1, added the image information and the ar
 #### the user can change the inputs later by running the command:
 
 ```helm upgrade --install calc-app ./calc-chart --set a=10 --set b=20 --set op=-```
+
 a, b can be changed to any number and op to one of the following: [ +, -, *, / ]
 
 
 7.2. Deploy to Kubernetes Cluster
+
 ```helm upgrade --install calc-app ./calc-chart```
 
 
