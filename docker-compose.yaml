@@ -4,5 +4,6 @@ services:
   calculator:
     image: omerbs/calculator-app:latest
     container_name: calculator-app
-    stdin_open: true
-    tty: true   
+    stdin_open: false
+    tty: false
+    command: ["java", "-cp", "src:lib/*", "CalculatorApp", "4", "2", "+"]

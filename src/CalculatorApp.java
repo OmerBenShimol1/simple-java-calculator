@@ -31,7 +31,6 @@ public class CalculatorApp {
                 }
 
                 System.out.println("Result: " + result);
-                return;
 
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number format: " + e.getMessage());
@@ -42,6 +41,7 @@ public class CalculatorApp {
             }
 
         } else if (System.console() != null) {
+            @SuppressWarnings("resource")
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter first number:");
