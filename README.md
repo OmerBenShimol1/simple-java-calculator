@@ -105,7 +105,7 @@ The user can change the parameters by editing the command line in the docker-com
 
 ```command: ["java", "-cp", "src:lib/*", "CalculatorApp", "4", "2", "+"]```
 
-Type: ```docker-compose up --build to build the docker-compose```
+To build the docker-compose type: ```docker-compose up --build``` 
 
 Also, if the user wants to interact manually with the container they can change stdin_open and tty fields to 'true' and remove the ```command``` field.
 
