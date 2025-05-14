@@ -1,34 +1,4 @@
-# simple-java-calculator
-Project Description:
-This project demonstrates a full DevOps pipeline built around a simple Java calculator app. It showcases how to automate testing, containerization, and deployment using popular tools like Jenkins, Docker, and Kubernetes.
-
-Technologies Used:
-Java
-Maven
-JUnit 5
-Jenkins
-Docker
-Docker Compose
-Kubernetes
-Helm
-
-Development & DevOps Workflow:
-Java Development – Basic calculator with operations like add, subtract, multiply, divide.
-Unit Testing – JUnit 5 tests to validate each method.
-CI with Jenkins – Pull from GitHub, run tests, build Docker image, publish results.
-Dockerization – Dockerfile to package the application.
-Local Environment – Use Docker Compose to run Jenkins and the app.
-Kubernetes Deployment – Helm chart used for production-style deployment.
-
-CI/CD Process with Jenkins:
-The Jenkins pipeline performs the following steps:
-Clones the GitHub repository
-Runs unit tests using Maven
-Builds a Docker image - only if all the unit tests passed
-Pushes the image to Docker Hub
-Archives test results and logs
-
-# Workflow
+# Workthrough
 
 ## 1. Building the Java Calculator App
 
